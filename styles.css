@@ -1,0 +1,67 @@
+::root{
+    --Soft-red: hsl(10, 79%, 65%);
+--Cyan: c;
+}
+
+
+.cp1{
+    background: hsl(10, 79%, 65%);
+
+}
+
+.dollar{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.bars{
+    width: 75px;
+}
+
+.bars:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/* .monday-bar{
+    display: flex;
+    flex-direction: column;
+    float: inline-end;
+} */
+
+#monday{
+    height: 50px;
+    background: hsl(10, 79%, 65%);
+}
+#tuesday{
+    height: 150px;
+    background: hsl(10, 79%, 65%);
+}
+#wed{
+    height: 300px;
+    background: hsl(186, 34%, 60%);
+}
+
+#thur{
+    height: 180px;
+    background: hsl(10, 79%, 65%);
+}
+
+#frid{
+    height: 80px;
+    background: hsl(10, 79%, 65%);
+}
+
+#sat{
+    height: 250px;
+    background: hsl(10, 79%, 65%);
+}
+
+#sun{
+    height: 100px;
+    background: hsl(10, 79%, 65%);
+}
+/* .total-amount{
+    font-weight: 700;
+    font-size: 54px;
+} */

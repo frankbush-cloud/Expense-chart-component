@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Frontend Mentor | Expenses chart component</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  
+</head>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <body>
+    <div class="container">
+      <div class="row cp1 p-5 text-white rounded-4">
+        <div class="col-sm-6">
+          <p>My balance</p>
+          <span class="dollar">$921.48</span>
+        </div>
+        <div class="col-sm-6">
+          <img src="./images/logo.svg" alt="" class="float-end px-1">
+        </div>
+      </div>
+
+      <div class="container-main container mt-5 p-5 bg-light rounded-4">
+        <div class="title">
+          <p class="h1">Spending-last 7 days</p>
+        </div>
+        <div>
+          <canvas id="myChart"></canvas>
+        </div>
+         
+
+        <!-- <div class="row mt-5">
+          <div class="monday-bar col d-flex justify-content-end flex-column">
+            <div class="amount-$">
+              <p class="amount-spent py-2 bg-dark text-light rounded text-center">$40.08</p>
+            </div>
+            <div class="bars rounded mx-auto" id="monday">
+            </div>
+            <div class="day">
+              <p class="text-center">mon</p>
+            </div>
+          </div>
+          <div class="tuesday-bar col d-flex justify-content-end flex-column">
+            <p class="amount-spent p-2 bg-dark text-light rounded text-center">$40.08</p>
+            <div class="bars  mx-1 rounded mx-auto" id="tuesday">
+            </div>
+            <p class="text-center">tues</p>
+          </div>
+          <div class="wed-bar col d-flex justify-content-end flex-column">
+            <p class="amount-spent p-2 bg-dark text-light rounded text-center">$40.08</p>
+            <div class="bars  mx-1 rounded mx-auto" id="wed">
+            </div>
+            <p class="text-center">wed</p>
+          </div>
+          <div class="thur-bar col d-flex justify-content-end flex-column">
+            <p class="amount-spent p-2 bg-dark text-light rounded text-center">$40.08</p>
+            <div class="bars  mx-1 rounded mx-auto" id="thur">
+            </div>
+            <p class="text-center">Thur</p>
+          </div>
+          <div class="frid-bar col d-flex justify-content-end flex-column">
+            <p class="amount-spent p-2 bg-dark text-light rounded text-center">$40.08</p>
+            <div class="bars  mx-1 rounded mx-auto" id="frid">
+            </div>
+            <p class="text-center">Frid</p>
+          </div>
+          <div class="sat-bar col d-flex justify-content-end flex-column">
+            <p class="amount-spent p-2 bg-dark text-light rounded text-center">$40.08</p>
+            <div class="bars  mx-1 rounded mx-auto" id="sat">
+            </div>
+            <p class="text-center">Sat</p>
+            
+          </div>
+          <div class="sun-bar col d-flex justify-content-end flex-column">
+            <p class="amount-spent p-2 bg-dark text-light rounded text-center">$40.08</p>
+            <div class="bars  mx-1 rounded mx-auto" id="sun">
+            </div>
+            <p class="text-center">Sun</p>
+            
+          </div>
+        </div> -->
+      </div>
+      <hr>
+      <div class="row p-3 bg-light ">
+        <div class="total-spent col-sm-6 border">
+          <p class="mb-0 fs-4">Total this month</p>
+          <p class="text-dark total-amount display-3 fw-bold">$473.83</p>
+        </div>
+        <div class="deviation col-sm-6 d-flex justify-content-end border">
+          <div class="left-aside">
+            <p class="fs-4 fw-bold">+2.4%</p>
+            <p>From last month</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const ctx = document.getElementById('myChart');
+    
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['mon', 'tue', 'wed', 'thur', 'frid', 'sat', 'sun'],//x-axix
+          datasets: [{
+            label: 'USD',
+            data: [17.45,34.91, 52.36, 31.07, 23.39, 43.28, 25.48],//y-axis
+            borderWidth: 1,
+            backgroundColor: [
+            'hsl(10, 79%, 65%)',//monday
+            'hsl(10, 79%, 65%)',//tue
+            'hsl(186, 34%, 60%)',//wed
+            'hsl(10, 79%, 65%)',//thur
+            'hsl(10, 79%, 65%)',//frid
+            'hsl(10, 79%, 65%)',//sat
+            'hsl(10, 79%, 65%)'//sun
+          ]
+          }]
+        },
+        options: { 
+            scales: {
+              y: {beginAtZero: true
+            }
+          }
+        }
+      });
+
+    
+    </script>
+    
+  </body>
+</html>
